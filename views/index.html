@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>GoTaco!</title>
+</head>
+<body>
+	<h1>GoTaco!</h1>
+
+	<form action="/users/login" method="POST">
+        <label for="email">Email Address</label><br>
+        <input id="email" type="text" name="user[email]" placeholder="username@email.com"><br>
+        <label for="password">Password</label><br>
+        <input id="password" type="password" name="user[password]" placeholder="password"><br>
+        <input type="submit" value="Log In">
+      </form><br />
+
+    <a href="/users/signup"><button>Sign Up</button></a>
+
+</body>
+</html>
