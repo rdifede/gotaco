@@ -5,17 +5,31 @@
 	<title>Let's Get Tacos!</title>
 	<script src="/js/jquery.js"></script>
     <script src="/js/script.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+
 </head>
 <body>
 	<h1>The Tacos Await!</h1>
 
 	<a href="/users/favorites"><button>My Favs</button></a> 
-	
 
-	 <form action="/users/tacos" method="GET"><br />
+
+	 <form action="/users/tacos" id="search" method="GET"><br />
         <label for="location">Location</label><br>
         <input id="location" type="text" name="user[location]" placeholder="123 Main St New York, NY or Chicago, IL"><br>
         <input type="submit" id="get-tacos" value="Get Me Tacos">
       </form>
+		
+
+      <div id="results">
+      
+   <!--   {{#data}}
+      <p>{{name}}</p>
+      <p>{{vicinity}}</p>
+
+      {{/data}} -->
+      
+      	
+      </div>
 </body>
 </html>

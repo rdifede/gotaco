@@ -1,5 +1,5 @@
 const bcrypt = require('bcryptjs');
-
+const axios = require('axios');
 const db = require('../models/setup');
 
 function create(user) {
@@ -21,11 +21,10 @@ function findByUser(email) {
 };
 
 
-function getAddress(location) {
-	let input = $('#location').val();
+ function getAddress(location) {
 	const inputAddress = axios({
 		method: 'GET',
-		url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + input + '&key=YOUR_API_KEY'
+		url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + location + '&key=AIzaSyBzHS2lp_PLtApqPAqGBl3syvW-Fsk5u6c'
 	})
 
 	return inputAddress
@@ -35,7 +34,7 @@ function getAddress(location) {
 function getTacos(location) {
 	const tacoPlaces = axios({
 		method: 'GET',
-		url:'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + inputAddress + '&radius=500&type=restaurant&keyword=tacos&key=AIzaSyBzHS2lp_PLtApqPAqGBl3syvW-Fsk5u6c'
+		url:'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + location.lat + ',' + location.lng + '&radius=500&type=restaurant&keyword=tacos&key=AIzaSyBzHS2lp_PLtApqPAqGBl3syvW-Fsk5u6c'
 	})
 	return tacoPlaces
 }
