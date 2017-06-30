@@ -34,10 +34,19 @@ function findByUser(email) {
 function getTacos(location) {
 	const tacoPlaces = axios({
 		method: 'GET',
-		url:'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + location.lat + ',' + location.lng + '&radius=500&type=restaurant&keyword=tacos&key=AIzaSyBzHS2lp_PLtApqPAqGBl3syvW-Fsk5u6c'
+		url:'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + location.lat + ',' + location.lng + '&radius=5000&type=restaurant&keyword=tacos&key=AIzaSyBzHS2lp_PLtApqPAqGBl3syvW-Fsk5u6c'
 	})
 	return tacoPlaces
 }
 
+function saveFavs(shop) {
+	return db.oneOrNone(`
+	INSERT INTO favorites
+	(restaurant_name, address)
+	VALUES
+	($1, $2)
+	RETURNING *;`, [shop.restaurant_name, shop.address]);
+};
 
-module.exports = { create, findByUser, getTacos, getAddress };
+
+module.exports = { create, findByUser, getTacos, getAddress, saveFavs };

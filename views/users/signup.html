@@ -3,20 +3,24 @@
 <head>
       <meta charset="UTF-8">
       <title>Sign Up!</title>
-      <link rel="stylesheet" href="../css/style.css">
+      <link rel="stylesheet" href="../css/index.css">
+      <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet">
 
 </head>
 <body>
       <h1>Sign Up!</h1>
 
-      <form action="/users" method="POST">
+      <div class="container">
+        <form action="/users" method="POST">
         <label for="email">Email Address</label><br>
-        <input id="email" type="text" name="user[email]" placeholder="username@email.com"><br>
+        <input class="form" id="email" type="text" name="user[email]" placeholder="username@email.com"><br>
         <label for="password">Password</label><br>
-        <input id="password" type="password" name="user[password]" placeholder="password"><br>
+        <input class="form" id="password" type="password" name="user[password]" placeholder="password"><br>
         <input type="submit" value="Sign Up">
-      </form><br />
-
+      </form>
       <a href="/"><button>Log In</button></a>
+      </div><br />
+
 </body>
 </html>

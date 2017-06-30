@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Let's Get Tacos!</title>
-	<script src="/js/jquery.js"></script>
+    <meta charset="UTF-8">
+    <title>Let's Get Tacos!</title>
+    <script src="/js/jquery.js"></script>
     <script src="/js/script.js"></script>
     <link rel="stylesheet" href="../css/style.css">
-
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet">
 </head>
+
 <body>
-	<h1>The Tacos Await!</h1>
-
-	<a href="/users/favorites"><button>My Favs</button></a> 
-
-
-	 <form action="/users/tacos" id="search" method="GET"><br />
-        <label for="location">Location</label><br>
-        <input id="location" type="text" name="user[location]" placeholder="123 Main St New York, NY or Chicago, IL"><br>
-        <input type="submit" id="get-tacos" value="Get Me Tacos">
-      </form>
-		
-
-      <div id="results">
-      
-   <!--   {{#data}}
-      <p>{{name}}</p>
-      <p>{{vicinity}}</p>
-
-      {{/data}} -->
-      
-      	
-      </div>
+    <h1>The Tacos Await!</h1>
+    <div class="favs">
+        <a href="/users/favorites">
+            <button id="favs">My Favs</button>
+        </a>
+    </div>
+    <div class="taco-form">
+        <form action="/users/tacos" id="search" method="GET">
+            <br />
+            <label for="location">Location</label>
+            <br>
+            <input id="location" type="text" name="user[location]" placeholder="123 Main St New York, NY or Chicago, IL">
+            <br>
+            <input type="submit" id="get-tacos" value="Get Me Tacos">
+        </form>
+    </div>
+    <div class="results-container">
+        <div id="results">
+        </div>
+    </div>
 </body>
+
 </html>

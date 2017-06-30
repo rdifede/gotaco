@@ -36,13 +36,10 @@ function serverCall (input) {
 }
 
 
-// function tacos(list) {
-// 	const container = $('#results');
-// 	list.forEach(function (){
+// $('#favs').on('submit', (e) => {
+// 	e.preventDefault();
 
-// 	})
-// 	container.append(list);
-// }
+// })
 
 
 

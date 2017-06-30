@@ -9,26 +9,42 @@ body {
 h1 {
 	font-family: 'Bungee Shade', cursive;
 	color: black;
-	font-size: 60px;
+	font-size: 65px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	padding-top: 5px;
 }
 
-form {
-	margin: 0 auto;
+.container {
+	width: 100vw;
 	padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Lalezar', cursive;
+
 }
 
 label {
-	font-size: 30px;
+	font-size: 25px;
+	margin: 0 auto;
 }
 
-input {
+.form {
+	width: 200px;
+}
+
+.button {
+	text-decoration: none;
+
+}
+
+
+.sign {
+	text-decoration: none;
 	display: flex;
-	align-items: center;
 	justify-content: center;
+	align-items: center;	
 }
-
-
 

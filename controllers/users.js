@@ -32,12 +32,22 @@ router.post('/', (req, res) => {
         })
 
 
+// router.post('/', (req, res) => {
+//     let favObj = { }
+
+//     const fave = req.body.
+// })
+
+
+router.get('/', (req,res) => {
+    res.render('/users/favorites');
+})
+
+
 
 
 
 })
-
-
 
 
 

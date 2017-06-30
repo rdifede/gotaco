@@ -1,9 +1,12 @@
 body {
-	background-color: cornflowerblue;
-	background-size: cover;
+	background-color: tomato;
 	height: 100vh;
 	width: 100vw;
-	font
+	margin: 0 auto;
+	background-repeat: repeat;
+	background-size: cover;
+	background-image: url("../Corn-tortilla.png");
+	
 
 }
 
@@ -12,6 +15,8 @@ h1 {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	font-family: 'Bungee Shade', cursive;
+	color: black;
 }
 
 label {
@@ -20,5 +25,53 @@ label {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 10px;
+	/*padding: 10px;*/
+	font-family: 'Lalezar', cursive;
 }
+
+.taco-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Lalezar', cursive;
+}
+
+input {
+	width: 200px;
+	height: 30px;
+}
+
+.favs {
+	display: flex;
+	justify-content: center;
+	align-items: right;	
+}
+
+#favs {
+	text-decoration: none;
+	height: 50px;
+	width: 125px;
+	font-size: 25px;
+	font-family: 'Lalezar', cursive;
+}
+
+
+#results {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Lalezar', cursive;
+	font-size: 20px;
+}
+
+dt {
+	margin: 0 auto;
+}
+
+#get-tacos {
+	height: 30px;
+	width: 200px;
+	margin: 0 auto;
+
+}
+
