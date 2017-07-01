@@ -19,13 +19,18 @@ function serverCall (input) {
 		success: data => {
 		const $results = $('#results');
 		$results.empty();
-		console.log(data.restaurants);
+		// console.log(data.restaurants);
+		console.log(data);
 		data.restaurants.forEach(function(tacos){
 			let $list = $('<dl>')
 			let $shops = $('<dt>');
 			let $address = $('<dd>');
+			let $taco = $('<button>');
+			$taco.attr('id', 'tacmoji');
+			$taco.text(data.emoji + 'Add To Favs');
 			 $shops.text(tacos.name);
 			 $address.text(tacos.vicinity);
+			 $address.append($taco);
 			 $results.append($list);
 			 $results.append($shops);
 			 $results.append($address);
@@ -36,6 +41,7 @@ function serverCall (input) {
 }
 
 
+	
 // $('#favs').on('submit', (e) => {
 // 	e.preventDefault();
 

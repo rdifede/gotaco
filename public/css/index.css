@@ -23,6 +23,7 @@ h1 {
 	align-items: center;
 	justify-content: center;
 	font-family: 'Lalezar', cursive;
+	text-decoration: none;
 
 }
 
@@ -43,8 +44,19 @@ label {
 
 .sign {
 	text-decoration: none;
-	display: flex;
-	justify-content: center;
-	align-items: center;	
+	margin: 0 auto;
+	width: 100px;
+	display: block;	
 }
+
+.log-in {
+	text-decoration: none;
+	margin: 0 auto;
+	width: 100px;
+	display: block;
+	padding-left: 20px;
+	
+}
+
+	
 

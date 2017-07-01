@@ -35,9 +35,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // app.use('/signup', require('./controllers/users'));
-app.use('/users', require('./controllers/signup'));
 app.use('/users/tacos', require('./controllers/users'));
-app.use('/users/favorites', require('./controllers/users'));
+app.use('/users', require('./controllers/signup'));
 
 app.get('/', (req, res) => {
     res.render('index');

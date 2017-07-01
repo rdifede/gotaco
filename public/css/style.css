@@ -3,8 +3,9 @@ body {
 	height: 100vh;
 	width: 100vw;
 	margin: 0 auto;
-	background-repeat: repeat;
-	background-size: cover;
+	background-repeat: repeat-y;
+	background-position: center;
+	background-size: contain;
 	background-image: url("../Corn-tortilla.png");
 	
 
@@ -26,14 +27,14 @@ label {
 	justify-content: center;
 	align-items: center;
 	/*padding: 10px;*/
-	font-family: 'Lalezar', cursive;
+	font-family: 'Rock Salt', cursive;
 }
 
 .taco-form {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-family: 'Lalezar', cursive;
+	font-family: 'Rock Salt', cursive;
 }
 
 input {
@@ -43,7 +44,7 @@ input {
 
 .favs {
 	display: flex;
-	justify-content: center;
+	justify-content: flex-end;
 	align-items: right;	
 }
 
@@ -51,8 +52,10 @@ input {
 	text-decoration: none;
 	height: 50px;
 	width: 125px;
-	font-size: 25px;
-	font-family: 'Lalezar', cursive;
+	font-size: 20px;
+	font-family: 'Rock Salt', cursive;
+	margin-top: 15px;
+	margin-right: 15px;
 }
 
 
@@ -60,18 +63,28 @@ input {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	font-family: 'Lalezar', cursive;
+	font-family: 'Rock Salt', cursive;
 	font-size: 20px;
 }
 
-dt {
-	margin: 0 auto;
-}
 
 #get-tacos {
 	height: 30px;
 	width: 200px;
 	margin: 0 auto;
 
+}
+
+.current {
+	height: 30px;
+	width: 200px;
+	margin: 0 auto;
+}
+
+#tacmoji {
+	margin: 5px;
+	display: block;
+	width: 100px;
+	size: 10px;
 }
 

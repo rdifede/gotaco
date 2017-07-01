@@ -8,26 +8,40 @@
     <script src="/js/script.js"></script>
     <link rel="stylesheet" href="../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
 </head>
 
 <body>
-    <h1>The Tacos Await!</h1>
     <div class="favs">
-        <a href="/users/favorites">
+        <a href="/users/tacos/favorites">
             <button id="favs">My Favs</button>
         </a>
     </div>
+    <h1>The Tacos Await!</h1>
     <div class="taco-form">
         <form action="/users/tacos" id="search" method="GET">
             <br />
             <label for="location">Location</label>
-            <br>
+            <button onclick="getLocation()" class="current">Use Current Location</button><br>
             <input id="location" type="text" name="user[location]" placeholder="123 Main St New York, NY or Chicago, IL">
             <br>
             <input type="submit" id="get-tacos" value="Get Me Tacos">
         </form>
     </div>
+    <script>
+	const current = document.getElementById("location");
+    function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        current.innerHTML = "Geolocation is not supported by this browser.";
+    }
+
+}
+function showPosition(position) {
+     current.value = position.coords.latitude + ',' + position.coords.longitude;
+}
+</script>
     <div class="results-container">
         <div id="results">
         </div>
