@@ -34,16 +34,34 @@ router.get('/favorites', (req, res) => {
     res.render('users/favorites');
 })
 
+
+
+
+
 // router.post(
 //     '/favorites',
 //     (req, res) => {
 //        User
-//        .saveFavs(req.user)
+//        .saveFavs(req.body.shop)
 //        .then(data => {
-//          res.json({favorites: data.favorites});
+//          res.send(data);
 //        });
 //     }
 // );
+
+router.post(
+    '/favorites',
+    (req, res) => {
+        
+       User
+       .saveFavs(shop)
+       .then(data => {
+         res.json(data.shop);
+       });
+    }
+);
+
+
 
 
 module.exports = router;
