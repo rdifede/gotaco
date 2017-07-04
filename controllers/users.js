@@ -13,7 +13,7 @@ router.post('/', (req, res) => {
         .then((geo) => {
             return User.getTacos(geo.data.results[0].geometry.location)
                 .then((location) => {
-                    console.log('the tacos infom ->', location.data.results)
+                    // console.log('the tacos infom ->', location.data.results)
                     tacoObj.restaurants = location.data.results
                     tacoObj.emoji = tacmoji;
                     res.json(tacoObj);
@@ -31,8 +31,12 @@ router.post('/', (req, res) => {
 })
 
 router.get('/favorites', (req, res) => {
-    res.render('users/favorites');
-})
+          res.render('users/favorites')
+     })
+
+ 
+  
+
 
 
 
@@ -42,9 +46,10 @@ router.get('/favorites', (req, res) => {
 //     '/favorites',
 //     (req, res) => {
 //        User
-//        .saveFavs(req.body.shop)
+//        .saveFavs(req.body.tacos)
 //        .then(data => {
-//          res.send(data);
+//         // console.log(data.name)
+//          res.json(data);
 //        });
 //     }
 // );
@@ -52,12 +57,26 @@ router.get('/favorites', (req, res) => {
 router.post(
     '/favorites',
     (req, res) => {
-        
+      // console.log("this is your data", req.body.tacos);
+      // const name = req.body.tacos.name
+      // const address = req.body.tacos.vicinity
+      // req.body.tacos.id = req.user.id
+      let favData = { 
+      } 
+     const favoritePlace = req.body.favObj
        User
-       .saveFavs(favObj)
-       .then(data => {
-         res.json(favObj);
-       });
+       // 
+       .saveFavs(favoritePlace)
+       .then(fav => {
+        // console.log("HEY BITCH", fav)
+       favData.name = fav.name
+       favData.address = fav.vicinity
+        // console.log(req.body.tacos);
+         res.json(favData);
+       })
+       .catch(err => {
+                    console.log('error', err);
+                });
     }
 );
 

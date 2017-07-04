@@ -10,8 +10,6 @@ CREATE TABLE users (
 CREATE TABLE favorites (
   id BIGSERIAL PRIMARY KEY,
   user_id INT REFERENCES users(id),
-  restaurant_name VARCHAR NOT NULL,
-  address VARCHAR NOT NULL UNIQUE,
-  city VARCHAR NOT NULL,
-  state VARCHAR NOT NULL
+  restaurant_name VARCHAR ,
+  address VARCHAR UNIQUE
 );
