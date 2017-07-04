@@ -25,15 +25,22 @@ $(function() {
                     let $list = $('<dl>')
                     let $shops = $('<dt>');
                     let $address = $('<dd>');
+                    $shops.addClass(tacos.name);
+                    $address.addClass(tacos.vicinity);
                     let $taco = $('<button>');
                     $taco.attr('id', 'tacmoji').on('click', (e) => {
                         e.preventDefault();
-                        console.log("clicked favs!");
+                        const $favbutton = $(e.currentTarget);
+
+          				const favObj = {
+            			restaurant_name: $favbutton.attr("name"),
+            			address: $favbutton.attr("address")
+            		};
                         const addFavorite = (shop) => {
                             $.ajax({
                                 method: 'POST',
                                 url: '/users/tacos/favorites',
-                                data: data.restaurants,
+                                data: favObj,
                                 success: res => {
                                     window.location.replace('/users/tacos/favorites');
                                 },

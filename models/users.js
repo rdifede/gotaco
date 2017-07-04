@@ -39,13 +39,13 @@ function getTacos(location) {
 	return tacoPlaces
 }
 
-function saveFavs(shop, addy) {
+function saveFavs(shop) {
 	return db.oneOrNone(`
 	INSERT INTO favorites
 	(restaurant_name, address)
 	VALUES
 	($1, $2)
-	RETURNING *;`, [shop.restaurant_name, addy.address]);
+	RETURNING *;`, [shop.restaurant_name, address]);
 };
 
 
