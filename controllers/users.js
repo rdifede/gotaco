@@ -54,9 +54,10 @@ router.post(
     (req, res) => {
         
        User
-       .saveFavs(shop)
+       .saveFavs(req.body.restaurants)
+       console.log(req.body.restaurants)
        .then(data => {
-         res.json(data.shop);
+         res.json(data);
        });
     }
 );

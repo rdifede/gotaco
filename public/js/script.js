@@ -33,7 +33,7 @@ $(function() {
                             $.ajax({
                                 method: 'POST',
                                 url: '/users/tacos/favorites',
-                                data: { shop },
+                                data: data.restaurants,
                                 success: res => {
                                     window.location.replace('/users/tacos/favorites');
                                 },
@@ -43,7 +43,7 @@ $(function() {
                             })
 
                         }
-
+                        addFavorite();
                     })
                     $taco.text(data.emoji + 'Add To Favs');
                     $shops.text(tacos.name);
