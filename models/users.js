@@ -1,6 +1,7 @@
 const bcrypt = require('bcryptjs');
 const axios = require('axios');
 const db = require('../models/setup');
+const env = require('dotenv');
 
 function create(user) {
     const password = bcrypt.hashSync(user.password, 10);

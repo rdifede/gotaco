@@ -73,22 +73,29 @@ $(function() {
 
     function getRestaurants(data){
     	const $results = $('#results');
+
                 $results.empty();
+                const $list = $('<dl>');
     	data.restaurants.forEach(function(tacos) {
                     let $shops = $('<dt>');
                     let $address = $('<dd>');
                     let $taco = $('<button>');
                     $taco.attr('id', 'tacmoji').on('click', function (e) {
                     	e.preventDefault();
-                    	const $favbutton = $(e.currentTarget);
-            			favObj.name = $favbutton.attr("name")
-            			favObj.address = $favbutton.attr("address")
+                    	// debugger
+            			favObj.name = tacos.name
+            			favObj.address = tacos.vicinity
                     	addFavorite(favObj);
                     });
                     $taco.text(data.emoji + 'Add To Favs');
                     $shops.text(tacos.name);
                     $address.text(tacos.vicinity);
                     $address.append($taco);
+                    $shops.addClass("shop-name");
+                    $address.addClass("shop-address");
+                    $list.append($shops);
+                    $list.append($address);
+                    $results.append($list);
                     $results.append($shops);
                     $results.append($address);
     })
